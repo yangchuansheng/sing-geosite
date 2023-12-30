@@ -23,7 +23,7 @@ jobs:
       - name: change geosite
         run: |
           sed -i "s@v2fly/domain-list-community@yangchuansheng/domain-list-custom@g" main.go
-          sed -i "s@sagernet/sing-geosite@yangchuansheng/sing-geosite@g" main.go
+          # sed -i "s@sagernet/sing-geosite@yangchuansheng/sing-geosite@g" main.go
       - name: Build geosite
         id: build
         run: |
