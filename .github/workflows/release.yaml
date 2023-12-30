@@ -28,6 +28,7 @@ jobs:
         id: build
         run: |
           go run -v .
+          echo "::set-output name=skip::false"
       - name: Release rule sets
         if: steps.build.outputs.skip != 'true'
         run: .github/release-rule-set.sh
