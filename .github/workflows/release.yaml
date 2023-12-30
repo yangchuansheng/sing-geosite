@@ -28,6 +28,8 @@ jobs:
           sed -i "s@SagerNet/sing-geosite@yangchuansheng/sing-geosite@g" .github/release-rule-set.sh
       - name: Build geosite
         id: build
+        env:
+          NO_SKIP: true
         run: |
           cat main.go
           go run -v .
