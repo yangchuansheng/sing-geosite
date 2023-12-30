@@ -29,6 +29,7 @@ jobs:
       - name: Build geosite
         id: build
         run: |
+          cat main.go
           go run -v .
           echo "::set-output name=skip::false"
       - name: Release rule sets
