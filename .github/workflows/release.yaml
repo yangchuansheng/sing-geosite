@@ -24,7 +24,8 @@ jobs:
         run: |
           sed -i "s@v2fly/domain-list-community@yangchuansheng/domain-list-custom@g" main.go
           # sed -i "s@sagernet/sing-geosite@yangchuansheng/sing-geosite@g" main.go
-          sed -i "s@SagerNet/sing-geosite@SagerNet/sing-geosite@g" .github/release-rule-set.sh
+          sed -i "s@dlc.dat@geosite.dat@g" main.go
+          sed -i "s@SagerNet/sing-geosite@yangchuansheng/sing-geosite@g" .github/release-rule-set.sh
       - name: Build geosite
         id: build
         run: |
