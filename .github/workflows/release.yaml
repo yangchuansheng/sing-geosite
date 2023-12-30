@@ -23,17 +23,14 @@ jobs:
       - name: change geosite
         run: |
           sed -i "s@v2fly/domain-list-community@yangchuansheng/domain-list-custom@g" main.go
-          # sed -i "s@sagernet/sing-geosite@yangchuansheng/sing-geosite@g" main.go
+          sed -i "s@sagernet/sing-geosite@yangchuansheng/sing-geosite@g" main.go
           sed -i "s@dlc.dat@geosite.dat@g" main.go
-          sed -i "s@SagerNet/sing-geosite@yangchuansheng/sing-geosite@g" .github/release-rule-set.sh
       - name: Build geosite
         id: build
         env:
           NO_SKIP: true
         run: |
-          cat main.go
           go run -v .
-          echo "::set-output name=skip::false"
       - name: Release rule sets
         if: steps.build.outputs.skip != 'true'
         run: .github/release-rule-set.sh
